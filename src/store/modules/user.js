@@ -2,6 +2,7 @@ import { login, logout, getInfo } from '@/api/user'
 import { getToken, setToken, removeToken } from '@/utils/auth'
 import { resetRouter } from '@/router'
 import axios from 'axios'
+//import { push } from 'mock/user'
 
 const getDefaultState = () => {
   return {
@@ -136,13 +137,12 @@ const actions = {
       }
     })
     if (res.data.code == 1) {
-      return;
+      return true;
     }else{
       //token失效
       removeToken()
-      // this.$message.error("这是弹框消息")
-      resetRouter() // 重置路由
-      return;
+      alert(res.data.msg)
+      return false;
     }
   }
 }

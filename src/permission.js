@@ -22,10 +22,15 @@ router.beforeEach(async (to, from, next) => {
   const hasToken = getToken()
 
   if (hasToken) {
-    await store.dispatch('user/checkToken')
-    next()
-    
-
+    const res = await store.dispatch('user/checkToken')
+    if(res){
+      // Token有效，继续页面的跳转
+      next()
+    }else{
+      // Token失效，跳回登录页
+      next(`/login`)
+      return;
+    }
     if (to.path === '/login') {
       // if is logged in, redirect to the home page  如果已登录，依旧访问登录页，则重定向到主页
       next({ path: '/' })
