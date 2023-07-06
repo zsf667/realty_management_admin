@@ -124,6 +124,26 @@ const actions = {
       commit('RESET_STATE')
       resolve()
     })
+  },
+
+  //验证Token是否有效
+  async checkToken(){
+    const res = await axios({
+      url: "/admin/checkToken",
+      method: "get",
+      headers:{
+        token: state.token
+      }
+    })
+    if (res.data.code == 1) {
+      return;
+    }else{
+      //token失效
+      removeToken()
+      // this.$message.error("这是弹框消息")
+      resetRouter() // 重置路由
+      return;
+    }
   }
 }
 
