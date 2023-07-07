@@ -19,15 +19,15 @@
 
       <!-- 公告列表 -->
       <el-table :data="tableData" style="width: 100%">
-        <el-table-column prop="title" label="公告标题" width="200">
+        <el-table-column prop="title" label="公告标题" >
         </el-table-column>
-        <el-table-column prop="text" label="公告内容" width="400">
+        <el-table-column prop="text" label="公告内容" >
         </el-table-column>
-        <el-table-column prop="updateDate" label="发布时间" width="200" align="center">
+        <el-table-column prop="updateDate" label="发布时间"  align="center">
         </el-table-column>
-        <el-table-column prop="personnel.name" label="创建人" width="200">
+        <el-table-column prop="personnel.name" label="创建人" >
         </el-table-column>
-        <el-table-column label="操作" align="center">
+        <el-table-column label="操作" align="center" width="220">
           <template slot-scope="{ row }">
             <el-button type="primary" icon="el-icon-edit" size="mini" @click="handleEdit(row)">编辑</el-button>
             <el-button type="danger" size="mini" icon="el-icon-delete" @click="handleDelete(row)">删除</el-button>

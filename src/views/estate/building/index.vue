@@ -19,17 +19,17 @@
 
       <!-- 住户列表 -->
       <el-table :data="tableData" style="width: 100%">
-        <el-table-column prop="name" label="楼宇名称" width="200">
+        <el-table-column prop="name" label="楼宇名称" >
         </el-table-column>
-        <el-table-column prop="layers" label="楼宇层数" width="180">
+        <el-table-column prop="layers" label="楼宇层数" >
         </el-table-column>
-        <el-table-column prop="height" label="楼宇高度 (m)" width="180">
+        <el-table-column prop="height" label="楼宇高度 (m)" >
         </el-table-column>
-        <el-table-column prop="area" label="楼宇面积 (m²)" width="180">
+        <el-table-column prop="area" label="楼宇面积 (m²)" >
         </el-table-column>
-        <el-table-column prop="date" label="楼宇建成时间" width="200">
+        <el-table-column prop="date" label="楼宇建成时间" >
         </el-table-column>
-        <el-table-column label="操作" align="center">
+        <el-table-column label="操作" align="center" width="200">
           <template slot-scope="{ row, $index }">
             <el-button type="primary" @click="handleEdit(row)" icon="el-icon-edit" size="mini">编辑</el-button>
             <el-button type="danger" size="mini" icon="el-icon-delete" @click="handleDelete(row)">删除</el-button>

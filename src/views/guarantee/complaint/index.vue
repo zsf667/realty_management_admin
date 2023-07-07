@@ -20,19 +20,19 @@
       </el-form>
       <!-- 列表 -->
       <el-table :data="tableData" style="width: 100%">
-        <el-table-column prop="id" label="投诉编号" width="100">
+        <el-table-column prop="id" label="投诉编号">
         </el-table-column>
-        <el-table-column prop="userName" label="投诉人" width="100">
+        <el-table-column prop="userName" label="投诉人">
         </el-table-column>
-        <el-table-column prop="createDate" label="投诉时间" width="150">
+        <el-table-column prop="createDate" label="投诉时间">
         </el-table-column>
-        <el-table-column prop="text" label="投诉原因" width="230">
+        <el-table-column prop="text" label="投诉原因">
         </el-table-column>
-        <el-table-column prop="phone" label="联系方式" width="130">
+        <el-table-column prop="phone" label="联系方式">
         </el-table-column>
-        <el-table-column prop="address" label="用户地址" width="220">
+        <el-table-column prop="address" label="用户地址">
         </el-table-column>
-        <el-table-column prop="province" label="是否处理" width="120">
+        <el-table-column prop="province" label="是否处理">
           <template slot-scope="{ row }">
             <el-button
               @click="details(row)"
@@ -43,7 +43,7 @@
             </el-button>
           </template>
         </el-table-column>
-        <el-table-column label="操作" align="center">
+        <el-table-column label="操作" align="center" width="200">
           <template slot-scope="scope">
             <el-button
               size="mini"

@@ -21,19 +21,27 @@
 
       <!-- 住户列表 -->
       <el-table :data="tableData" style="width: 100%">
-        <el-table-column prop="userName" label="用户名" width="180">
+        <el-table-column prop="userName" label="用户名">
         </el-table-column>
-        <el-table-column prop="name" label="姓名" width="180">
+        <el-table-column label="头像">
+          <template slot-scope="scope">
+            <el-image
+              style="width: 70px; height: 70px"
+              :src="scope.row.avatar"
+            ></el-image>
+          </template>
         </el-table-column>
-        <el-table-column prop="phone" label="联系电话" width="180">
+        <el-table-column prop="name" label="姓名">
         </el-table-column>
-        <el-table-column prop="address" label="所在楼宇" width="180">
+        <el-table-column prop="phone" label="联系电话">
         </el-table-column>
-        <el-table-column prop="unitNum" label="所在单元" width="180">
+        <el-table-column prop="address" label="所在楼宇">
+        </el-table-column>
+        <el-table-column prop="unitNum" label="所在单元">
         </el-table-column>
         <el-table-column prop="roomNum" label="房间号"> </el-table-column>
 
-        <el-table-column label="操作">
+        <el-table-column label="操作" align="center" width="180">
           <template slot-scope="scope">
             <el-button
               size="mini"

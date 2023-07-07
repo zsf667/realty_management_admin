@@ -11,8 +11,8 @@
         class="demo-form-inline"
         label-width="65px"
       >
-        <el-form-item label="用户名">
-          <el-input v-model="formInline.name" placeholder="用户名"></el-input>
+        <el-form-item label="姓名">
+          <el-input v-model="formInline.name" placeholder="姓名"></el-input>
         </el-form-item>
         <el-form-item>
           <el-button type="primary" @click="onSubmit">查询</el-button>
@@ -24,9 +24,9 @@
 
       <!-- 住户列表 -->
       <el-table :data="tableData" style="width: 100%">
-        <el-table-column prop="userName" label="用户名" width="170">
+        <el-table-column prop="userName" label="用户名">
         </el-table-column>
-        <el-table-column label="头像" width="200">
+        <el-table-column label="头像">
           <template slot-scope="scope">
             <el-image
               style="width: 70px; height: 70px"
@@ -34,11 +34,11 @@
             ></el-image>
           </template>
         </el-table-column>
-        <el-table-column prop="name" label="姓名" width="180">
+        <el-table-column prop="name" label="姓名">
         </el-table-column>
-        <el-table-column prop="phone" label="联系电话" width="220">
+        <el-table-column prop="phone" label="联系电话">
         </el-table-column>
-        <el-table-column label="是否在职" width="240">
+        <el-table-column label="是否在职">
           <template slot-scope="scope">
             <el-switch
               v-model="scope.row.zt"
@@ -49,15 +49,15 @@
             </el-switch>
           </template>
         </el-table-column>
-        <el-table-column label="操作">
+        <el-table-column label="操作" align="center" width="200">
           <template slot-scope="scope">
-            <el-button
+            <!-- <el-button
               type="primary"
               @click="handleEdit(scope.row)"
               icon="el-icon-edit"
               size="mini"
               >编辑</el-button
-            >
+            > -->
             <el-button
               type="danger"
               size="mini"
@@ -207,11 +207,11 @@ export default {
       };
     },
     // 编辑按钮
-    handleEdit(row) {
-      this.dialogFormVisible = true;
-      const { id, userName, password, avatar, name, phone } = row;
-      this.form = { id, userName, password, avatar, name, phone };
-    },
+    // handleEdit(row) {
+    //   this.dialogFormVisible = true;
+    //   const { id, userName, avatar, name, phone } = row;
+    //   this.form = { id, userName, avatar, name, phone };
+    // },
     // 删除按钮
     async handleDelete(row) {
       const res = await this.$API.member.deleteWorker(row.id);
