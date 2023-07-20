@@ -39,7 +39,7 @@
         </el-table-column>
         <el-table-column prop="unitNum" label="所在单元">
         </el-table-column>
-        <el-table-column prop="roomNum" label="房间号"> </el-table-column>
+        <!-- <el-table-column prop="roomNum" label="房间号"> </el-table-column> -->
 
         <el-table-column label="操作" align="center" width="180">
           <template slot-scope="scope">
