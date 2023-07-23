@@ -43,7 +43,7 @@ module.exports = {
         proxy: {
             //为什么是/dev-api请看/src/utils/request.js文件
             '/': {
-                target: 'http://192.168.31.178:8080', // 接口的域名
+                target: 'http://172.20.1.101:8081', // 接口的域名
                 // secure: false,  // 如果是https接口，需要设置这个参数
                 changeOrigin: true,  // 是否跨域
                 // pathRewrite: {
